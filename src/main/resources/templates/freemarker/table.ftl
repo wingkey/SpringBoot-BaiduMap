@@ -60,25 +60,35 @@
       <div class="modal-body">
         <form id="editform">
           <div class="form-group">
-            <label for="modal-id" class="control-label">id:</label>
-            <input type="text" class="form-control" id="modal-id" name="modalid" readOnly="true">
+            <label for="modify-id" class="control-label">id:</label>
+            <input type="text" class="form-control" id="modify-id" name="modifyid" readOnly="true">
           </div>
           <div class="form-group">
-            <label for="modal-name" class="control-label">姓名:</label>
-            <input type="text" class="form-control" id="modal-name" name="modalname">
+            <label for="modify-name" class="control-label">姓名:</label>
+            <input type="text" class="form-control" id="modify-name" name="modifyname">
           </div>
           <div class="form-group">
-            <label for="modal-code" class="control-label">代号:</label>
-            <input type="text" class="form-control" id="modal-code" name="modalcode">
+            <label for="modify-phone" class="control-label">联系电话:</label>
+            <input type="text" class="form-control" id="modify-phone" name="modifyphone">
           </div>
           <div class="form-group">
-            <label for="modal-age" class="control-label">年龄:</label>
-            <input type="text" class="form-control" id="modal-age" name="modalage">
+            <label for="modify-address" class="control-label">地址:</label>
+            <input type="text" class="form-control" id="modify-address" name="modifyaddress">
+            <button type="button" class="btn btn-default" onclick="opMap(null,null,1)">地图选择</button>
           </div>
+          <div class="form-group">
+            <label for="modify-rank" class="control-label">信用等级:</label>
+            <input type="text" class="form-control" id="modify-rank" name="modifyrank">
+          </div>
+          <div class="form-group">
+            <label for="modify-others" class="control-label">经纬度:</label>
+            <input type="text" class="form-control" id="modify-others" name="modifyothers" readonly="true">
+          </div>
+          
           
             <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		        <button type="submit" class="btn btn-primary" onclick="editUser()">保存</button>
+		        <button type="button" class="btn btn-primary" onclick="editUser()">保存</button>
 		     </div>
         </form>
       </div>
@@ -110,20 +120,20 @@
           <div class="form-group">
             <label for="modal-address" class="control-label">地址:</label>
             <input type="text" class="form-control" id="modal-address" name="modaladdress">
-            <button type="button" class="btn btn-default" onclick="opMap()">地图选择</button>
+            <button type="button" class="btn btn-default" onclick="opMap(null,null,2)">地图选择</button>
           </div>
           <div class="form-group">
             <label for="modal-rank" class="control-label">信用等级:</label>
-            <input type="text" class="form-control" id="modal-rank" name="modalage">
+            <input type="text" class="form-control" id="modal-rank" name="modalrank">
           </div>
           <div class="form-group">
             <label for="modal-others" class="control-label">经纬度:</label>
-            <input type="text" class="form-control" id="modal-others" name="modalage">
+            <input type="text" class="form-control" id="modal-others" name="modalothers" readonly="true" >
           </div>
           
             <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		        <button type="submit" class="btn btn-primary" onclick="insertUser()">保存</button>
+		        <button type="submit" class="btn btn-primary" onclick="insertUser()" data-dismiss="modal">保存</button>
 		     </div>
         </form>
       </div>
@@ -142,6 +152,7 @@
 				<h4 class="modal-title" id="myModalLabel">详细地址</h4> 
 			</div>
 			<div class="model-body">
+			
 				<div id="allmap" style="height:600px;width:auto"></div>
 				
 				<div id="r_result">请输入：
